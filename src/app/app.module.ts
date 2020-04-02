@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { SharedModule } from './_shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { CustomInputTextComponent } from './_shared/input-components/custom-input-text/custom-input-text.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomInputTextComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

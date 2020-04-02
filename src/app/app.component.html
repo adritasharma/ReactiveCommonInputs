@@ -14,11 +14,11 @@
         <input-text controlName="Mobileno" placeholder="Mobile no" (blur)="logValidationErrors()"
           [inputError]="formErrors.Mobileno"></input-text>
 
-        <input-text controlName="Password" placeholder="Password" (blur)="logValidationErrors()"
-          [inputError]="formErrors.Password"></input-text>
+        <input-password controlName="Password" placeholder="Password" (blur)="logValidationErrors()"
+          [inputError]="formErrors.Password"  [showEye]="true"></input-password>
 
-        <input-text controlName="ConfirmPassword" placeholder="Confirm Password" (blur)="logValidationErrors()"
-          [inputError]="formErrors.ConfirmPassword"></input-text>
+        <input-password controlName="ConfirmPassword" placeholder="Confirm Password" (blur)="logValidationErrors()"
+          [inputError]="formErrors.ConfirmPassword"></input-password>
 
         <div class="row">
           <div class="col-md-12">

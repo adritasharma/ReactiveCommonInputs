@@ -9,7 +9,8 @@ export class ValidationService {
   constructor() { }
 
   public regex = {
-    email: '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
+    email: '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$',
+    phone:'^[0-9]{10}$'
   }
 
   getValidationErrors(group: FormGroup, validationMessages: Object): any {

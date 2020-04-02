@@ -20,20 +20,8 @@ export class AppComponent {
       'required': 'Email is required.',
       'pattern': 'Please provide valid Email ID'
     },
-    'Branchname': {
-    },
-    'Empid': {
-      'required': 'Empid is required.',
-    },
     'Mobileno': {
-    },
-    'Teamname': {
-    },
-    'Regionname': {
-    },
-    'Zone': {
-    },
-    'Territory': {
+      'pattern': 'Please provide valid Phone No'
     },
     'Password': {
       'required': 'Password is required.'
@@ -41,9 +29,6 @@ export class AppComponent {
     'ConfirmPassword': {
       'required': 'Confirm Password is required.',
       'mismatch': 'Password and Confirm Password do not match'
-    },
-    'PasswordGroup': {
-      //'PasswordMismatch': 'Password and Confirm Password do not match.'
     }
   };
   formErrors = {};
@@ -52,7 +37,7 @@ export class AppComponent {
     this.signUpForm = this.fb.group({
       Fullname: ['', [Validators.required]],
       Email: ['', [Validators.required, Validators.pattern(this._validate.regex.email)]],
-      Mobileno: [''],
+      Mobileno: ['', Validators.pattern(this._validate.regex.phone)],
       Password: ['', [Validators.required]],
       ConfirmPassword: ['', [Validators.required]]
     },
