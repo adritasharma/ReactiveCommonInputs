@@ -1,7 +1,7 @@
 <div class="form-group" [class.is-invalid]="inputError">
-  <label>{{placeholder}}:</label>
+  <label>{{label}}:</label>
   <input type="text" class="form-control" [formControlName]="controlName" (blur)="onBlur()"
-    [ngClass]="{'is-invalid':inputError ,'is-valid':!inputError && inputValue }" #ref (keyup)="onKeyUp()">
+    [ngClass]="{'is-invalid':inputError ,'is-valid':!inputError && inputValue }" #ref (keyup)="onKeyUp()" >
   <span class=" invalid-feedback" *ngIf="inputError">
     {{inputError}}
   </span>

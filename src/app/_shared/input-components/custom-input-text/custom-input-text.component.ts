@@ -9,14 +9,17 @@ import { ControlContainer, FormGroupDirective } from '@angular/forms';
   viewProviders: [
     {
       provide: ControlContainer,
-      useExisting: FormGroupDirective   
+      useExisting: FormGroupDirective
+      // useFactory: (container: ControlContainer) => container,
+      // deps: [[new SkipSelf(), ControlContainer]]   
     }
   ]
 })
 export class CustomInputTextComponent implements OnInit {
 
   @Input() controlName: string;
-  @Input() placeholder: string;
+  @Input() label: string;
+  @Input() placeHolder: string;
   @Input() inputError: string;
   @Input() disabled: boolean;
   @Input() focus: boolean
@@ -31,8 +34,11 @@ export class CustomInputTextComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (!this.placeholder) {
-      this.placeholder = this.controlName
+    if (!this.label) {
+      this.label = this.controlName
+    }
+    if (!this.placeHolder) {
+      this.placeHolder = this.label
     }
   }
 

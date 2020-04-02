@@ -5,19 +5,19 @@
       <hr>
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
 
-        <input-text controlName="Fullname" placeholder="Name" (blur)="logValidationErrors()"
+        <input-text controlName="Fullname" label="Name" (blur)="logValidationErrors()"
           [inputError]="formErrors.Fullname"></input-text>
 
-        <input-text controlName="Email" placeholder="Email Address" (blur)="logValidationErrors()"
+        <input-text controlName="Email" label="Email Address" (blur)="logValidationErrors()"
           [inputError]="formErrors.Email"></input-text>
 
-        <input-text controlName="Mobileno" placeholder="Mobile no" (blur)="logValidationErrors()"
+        <input-text controlName="Mobileno" label="Mobile no" (blur)="logValidationErrors()"
           [inputError]="formErrors.Mobileno"></input-text>
 
-        <input-password controlName="Password" placeholder="Password" (blur)="logValidationErrors()"
+        <input-password controlName="Password" label="Password" (blur)="logValidationErrors()"
           [inputError]="formErrors.Password"  [showEye]="true"></input-password>
 
-        <input-password controlName="ConfirmPassword" placeholder="Confirm Password" (blur)="logValidationErrors()"
+        <input-password controlName="ConfirmPassword" label="Confirm Password" (blur)="logValidationErrors()"
           [inputError]="formErrors.ConfirmPassword"></input-password>
 
         <div class="row">
