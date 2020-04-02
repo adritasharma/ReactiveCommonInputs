@@ -8,6 +8,9 @@
         <input-text controlName="Fullname" label="Name" (blur)="logValidationErrors()"
           [inputError]="formErrors.Fullname"></input-text>
 
+        <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()"
+          [inputError]="formErrors.Gender" [itemList]="genderList"></input-radio>
+
         <input-text controlName="Email" label="Email Address" (blur)="logValidationErrors()"
           [inputError]="formErrors.Email"></input-text>
 
@@ -15,7 +18,7 @@
           [inputError]="formErrors.Mobileno"></input-text>
 
         <input-password controlName="Password" label="Password" (blur)="logValidationErrors()"
-          [inputError]="formErrors.Password"  [showEye]="true"></input-password>
+          [inputError]="formErrors.Password" [showEye]="true"></input-password>
 
         <input-password controlName="ConfirmPassword" label="Confirm Password" (blur)="logValidationErrors()"
           [inputError]="formErrors.ConfirmPassword"></input-password>

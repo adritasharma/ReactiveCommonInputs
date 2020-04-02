@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomInputTextComponent } from './input-components/custom-input-text/custom-input-text.component';
-import { CustomInputPasswordComponent } from './input-components/custom-input-text/custom-input-password/custom-input-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomInputTextComponent } from './input-components/custom-input-text/custom-input-text.component';
+import { CustomInputPasswordComponent } from './input-components/custom-input-password/custom-input-password.component';
+import { CustomInputRadioComponent } from './input-components/CustomInputRadio/CustomInputRadio.component';
 
 
 @NgModule({
@@ -12,12 +13,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ],
     declarations: [
         CustomInputTextComponent,
-        CustomInputPasswordComponent
+        CustomInputPasswordComponent,
+        CustomInputRadioComponent
     ],
     exports: [
         ReactiveFormsModule,
         CustomInputTextComponent,
-        CustomInputPasswordComponent
+        CustomInputPasswordComponent,
+        CustomInputRadioComponent
     ],
     entryComponents: [],
 })
