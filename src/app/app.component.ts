@@ -33,14 +33,18 @@ export class AppComponent {
   };
   formErrors = {};
 
+  // genderList = [
+  //   "Male", "Female", "Others"
+  // ]
+
   genderList = [
-    "Male", "Female", "Others"
+    {id:1, text:"Male"}, {id:2, text:"Female"}, {id:3, text:"Others"}
   ]
 
   ngOnInit() {
     this.signUpForm = this.fb.group({
       Fullname: ['', [Validators.required]],
-      Gender:['Male'],
+      Gender:[1, [Validators.required]],
       Email: ['', [Validators.required, Validators.pattern(this._validate.regex.email)]],
       Mobileno: ['', Validators.pattern(this._validate.regex.phone)],
       Password: ['', [Validators.required]],

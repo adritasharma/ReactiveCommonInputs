@@ -25,6 +25,10 @@ export class CustomInputRadioComponent implements OnInit {
   @Input() disabled: boolean;
   @Input() focus: boolean
 
+  @Input() isItemListObject: boolean
+  @Input() displayProp: string
+  @Input() valueProp: string
+
   @Output() blur = new EventEmitter();
 
   @ViewChild('ref') ref: ElementRef;

@@ -8,14 +8,17 @@
         <input-text controlName="Fullname" label="Name" (blur)="logValidationErrors()"
           [inputError]="formErrors.Fullname"></input-text>
 
-        <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()"
-          [inputError]="formErrors.Gender" [itemList]="genderList"></input-radio>
-
         <input-text controlName="Email" label="Email Address" (blur)="logValidationErrors()"
           [inputError]="formErrors.Email"></input-text>
 
         <input-text controlName="Mobileno" label="Mobile no" (blur)="logValidationErrors()"
           [inputError]="formErrors.Mobileno"></input-text>
+
+        <!-- <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()"
+          [inputError]="formErrors.Gender" [itemList]="genderList"></input-radio> -->
+
+        <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()" [inputError]="formErrors.Gender"
+          [itemList]="genderList" [isItemListObject]="true" displayProp="text" valueProp="id"></input-radio>
 
         <input-password controlName="Password" label="Password" (blur)="logValidationErrors()"
           [inputError]="formErrors.Password" [showEye]="true"></input-password>
