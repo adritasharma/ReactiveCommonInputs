@@ -1,11 +1,10 @@
-import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, SkipSelf } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
 
-
 @Component({
-  selector: 'input-radio',
-  templateUrl: './CustomInputRadio.component.html',
-  styleUrls: ['./CustomInputRadio.component.css'],
+  selector: 'input-select',
+  templateUrl: './custom-input-select.component.html',
+  styleUrls: ['./custom-input-select.component.css'],
   viewProviders: [
     {
       provide: ControlContainer,
@@ -15,7 +14,9 @@ import { ControlContainer, FormGroupDirective } from '@angular/forms';
     }
   ]
 })
-export class CustomInputRadioComponent implements OnInit {
+export class CustomInputSelectComponent implements OnInit {
+
+  constructor() { }
 
   @Input() controlName: string;
   @Input() itemList: any[]
@@ -31,10 +32,8 @@ export class CustomInputRadioComponent implements OnInit {
 
   inputValue: any
 
-
-  constructor() { }
-
   ngOnInit() {
+
     if (!this.label) {
       this.label = this.controlName
     }
@@ -49,5 +48,19 @@ export class CustomInputRadioComponent implements OnInit {
 
   onKeyUp() {
     this.inputValue = this.ref.nativeElement.value;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.itemList) {
+      this.itemList = changes.itemList.currentValue;
+      if ((this.itemList.filter(x => x.id == null).length) < 1) {
+        this.itemList.unshift(
+          {
+            id: null,
+            text: `  -- Select ${this.label} --`
+          }
+        )
+      }
+    }
   }
 }
