@@ -26,6 +26,9 @@ export class CustomInputSelectComponent implements OnInit {
   @Input() disabled: boolean;
   @Input() focus: boolean
 
+  @Input() displayProp: string
+  @Input() valueProp: string
+
   @Output() blur = new EventEmitter();
 
   @ViewChild('ref') ref: ElementRef;
@@ -53,13 +56,11 @@ export class CustomInputSelectComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.itemList) {
       this.itemList = changes.itemList.currentValue;
-      if ((this.itemList.filter(x => x.id == null).length) < 1) {
-        this.itemList.unshift(
-          {
-            id: null,
-            text: `  -- Select ${this.label} --`
-          }
-        )
+      if ((this.itemList.filter(x => x[this.valueProp] == null).length) < 1) {
+        let obj = {}
+        obj[this.valueProp] = '';
+        obj[this.displayProp] = `-- Select ${this.label} --`;
+        this.itemList.unshift(obj)
       }
     }
   }

@@ -14,11 +14,15 @@
         <input-text controlName="Mobileno" label="Mobile no" (blur)="logValidationErrors()"
           [inputError]="formErrors.Mobileno"></input-text>
 
-        <!-- <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()"
-          [inputError]="formErrors.Gender" [itemList]="genderList"></input-radio> -->
-
         <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()" [inputError]="formErrors.Gender"
-          [itemList]="genderList" [isItemListObject]="true" displayProp="text" valueProp="id"></input-radio>
+          [itemList]="genderList"></input-radio>
+
+        <!-- <input-radio controlName="Gender" label="Gender" (blur)="logValidationErrors()" [inputError]="formErrors.Gender"
+          [itemList]="genderList" [isItemListObject]="true" displayProp="text" valueProp="id"></input-radio> -->
+
+        <input-select controlName="Experience" label="Experience" (blur)="logValidationErrors()"
+          [inputError]="formErrors.Experience" [itemList]="experienceList" displayProp="text" valueProp="id">
+        </input-select>
 
         <input-password controlName="Password" label="Password" (blur)="logValidationErrors()"
           [inputError]="formErrors.Password" [showEye]="true"></input-password>
